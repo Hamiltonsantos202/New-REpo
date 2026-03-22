@@ -1,0 +1,16 @@
+{
+  "name": "polymarket-telegram-bot",
+  "version": "1.0.0",
+  "description": "Polymarket betting bot with Claude AI and Telegram",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.0",
+    "ethers": "^6.0.0",
+    "telegraf": "^4.15.0"
+  }
+}
