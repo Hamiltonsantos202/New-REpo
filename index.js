@@ -48,10 +48,16 @@ bot.command('scan', async (ctx) => {
         `💬 _${s.reasoning}_`,
         {
           parse_mode: 'Markdown',
-          ...Markup.inlineKeyboard([
-            Markup.button.callback('✅ Confirm Bet', `confirm_${id}`),
-            Markup.button.callback('❌ Skip', `skip_${id}`)
-          ])
+          await ctx.reply(
+  `🤖 *Auto-bet placed!*\n\n` +
+  `📊 *${s.question}*\n` +
+  `Side: *${s.side}* | Amount: $${s.betSize}\n` +
+  `Edge: +${s.edge}% | Claude: ${s.claudeOdds}%\n\n` +
+  `💬 _${s.reasoning}_`,
+  { parse_mode: 'Markdown' }
+);
+await placeBet(s);
+          
         }
       );
     }
